@@ -56,7 +56,8 @@ class MainTabController: UITabBarController {
             feed,
             search,
             imageSelector,
-            notifications, profile
+            notifications,
+            profile,
         ]
         
         tabBar.tintColor = .black
