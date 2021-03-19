@@ -14,6 +14,11 @@
 		A4A8A55C2604884200EA0ED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4A8A55B2604884200EA0ED7 /* Assets.xcassets */; };
 		A4A8A55F2604884200EA0ED7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4A8A55D2604884200EA0ED7 /* LaunchScreen.storyboard */; };
 		A4A8A57726048AAA00EA0ED7 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A57626048AAA00EA0ED7 /* MainTabController.swift */; };
+		A4A8A57A26048BCB00EA0ED7 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A57926048BCB00EA0ED7 /* FeedController.swift */; };
+		A4A8A57D26048BD300EA0ED7 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A57C26048BD300EA0ED7 /* SearchController.swift */; };
+		A4A8A58026048BD900EA0ED7 /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A57F26048BD900EA0ED7 /* ImageSelectorController.swift */; };
+		A4A8A58326048BDF00EA0ED7 /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A58226048BDF00EA0ED7 /* NotificationsController.swift */; };
+		A4A8A58626048BE500EA0ED7 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A58526048BE500EA0ED7 /* ProfileController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		A4A8A55E2604884200EA0ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4A8A5602604884200EA0ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4A8A57626048AAA00EA0ED7 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		A4A8A57926048BCB00EA0ED7 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		A4A8A57C26048BD300EA0ED7 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		A4A8A57F26048BD900EA0ED7 /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
+		A4A8A58226048BDF00EA0ED7 /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
+		A4A8A58526048BE500EA0ED7 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +103,11 @@
 			isa = PBXGroup;
 			children = (
 				A4A8A57626048AAA00EA0ED7 /* MainTabController.swift */,
+				A4A8A57926048BCB00EA0ED7 /* FeedController.swift */,
+				A4A8A57C26048BD300EA0ED7 /* SearchController.swift */,
+				A4A8A57F26048BD900EA0ED7 /* ImageSelectorController.swift */,
+				A4A8A58226048BDF00EA0ED7 /* NotificationsController.swift */,
+				A4A8A58526048BE500EA0ED7 /* ProfileController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -189,7 +204,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4A8A5572604884100EA0ED7 /* ViewController.swift in Sources */,
+				A4A8A58026048BD900EA0ED7 /* ImageSelectorController.swift in Sources */,
+				A4A8A58326048BDF00EA0ED7 /* NotificationsController.swift in Sources */,
+				A4A8A57D26048BD300EA0ED7 /* SearchController.swift in Sources */,
 				A4A8A5532604884100EA0ED7 /* AppDelegate.swift in Sources */,
+				A4A8A58626048BE500EA0ED7 /* ProfileController.swift in Sources */,
+				A4A8A57A26048BCB00EA0ED7 /* FeedController.swift in Sources */,
 				A4A8A57726048AAA00EA0ED7 /* MainTabController.swift in Sources */,
 				A4A8A5552604884100EA0ED7 /* SceneDelegate.swift in Sources */,
 			);
