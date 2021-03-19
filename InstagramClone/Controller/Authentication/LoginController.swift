@@ -18,31 +18,12 @@ class LoginController: UIViewController {
     }()
     
     private let emailTextField: UITextField = {
-        let tf = UITextField()
-        tf.borderStyle = .none
-        tf.textColor = .white
-        tf.keyboardAppearance = .dark
-        tf.keyboardType = .emailAddress
-        tf.backgroundColor = UIColor(white: 1, alpha: 0.1)
-        tf.setHeight(50)
-        tf.attributedPlaceholder = NSAttributedString(
-            string: "Email",
-            attributes: [.foregroundColor: UIColor(white: 1, alpha: 0.7)]
-        )
+        let tf = CustomtextField(placeholder: "Email", keyboardType: .emailAddress)
         return tf
     }()
     
     private let passwordTextField: UITextField = {
-        let tf = UITextField()
-        tf.borderStyle = .none
-        tf.textColor = .white
-        tf.keyboardAppearance = .dark
-        tf.backgroundColor = UIColor(white: 1, alpha: 0.1)
-        tf.setHeight(50)
-        tf.attributedPlaceholder = NSAttributedString(
-            string: "Password",
-            attributes: [.foregroundColor: UIColor(white: 1, alpha: 0.7)]
-        )
+        let tf = CustomtextField(placeholder: "Password")
         tf.isSecureTextEntry = true
         return tf
     }()
@@ -60,57 +41,19 @@ class LoginController: UIViewController {
     
     private let forgotPasswordButton: UIButton = {
         let button = UIButton(type: .system)
-        
-        let atts: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor(white: 1, alpha: 0.7),
-            .font: UIFont.systemFont(ofSize: 16)
-        ]
-        let attributedTitle = NSMutableAttributedString(
-            string: "Forgot your password? ",
-            attributes: atts
+        button.attributedTitle(
+            normal: "Forgot your password?",
+            bold: "Get help signing in"
         )
-        
-        let boldAtts: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor(white: 1, alpha: 0.7),
-            .font: UIFont.boldSystemFont(ofSize: 16)
-        ]
-        attributedTitle.append(
-            NSAttributedString(
-                string: "Get help signing in",
-                attributes: boldAtts
-            )
-        )
-        
-        button.setAttributedTitle(attributedTitle, for: .normal)
-        
         return button
     }()
     
     private let dontHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
-        
-        let atts: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor(white: 1, alpha: 0.7),
-            .font: UIFont.systemFont(ofSize: 16)
-        ]
-        let attributedTitle = NSMutableAttributedString(
-            string: "Don't have an account?  ",
-            attributes: atts
+        button.attributedTitle(
+            normal: "Don't have an account?",
+            bold: "Sign Up"
         )
-        
-        let boldAtts: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor(white: 1, alpha: 0.7),
-            .font: UIFont.boldSystemFont(ofSize: 16)
-        ]
-        attributedTitle.append(
-            NSAttributedString(
-                string: "Sign Up",
-                attributes: boldAtts
-            )
-        )
-        
-        button.setAttributedTitle(attributedTitle, for: .normal)
-        
         return button
     }()
     
