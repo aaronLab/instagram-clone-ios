@@ -49,6 +49,18 @@ import UIKit
 //    }
 //}
 
+extension UIViewController {
+    
+    func configureGradientLayer() {
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor]
+        gradient.locations = [0, 1]
+        view.layer.addSublayer(gradient)
+        gradient.frame = view.frame
+    }
+    
+}
+
 extension UIButton {
     
     func attributedTitle(normal: String, bold: String) {
@@ -73,6 +85,15 @@ extension UIButton {
         )
         
         setAttributedTitle(attributedTitle, for: .normal)
+    }
+    
+    func authenticationButton(title: String) {
+        setTitle(title, for: .normal)
+        setTitleColor(.white, for: .normal)
+        backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
+        layer.cornerRadius = 5
+        setHeight(50)
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
     }
     
 }
