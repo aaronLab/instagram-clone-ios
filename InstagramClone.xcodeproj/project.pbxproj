@@ -25,6 +25,8 @@
 		A4A8A58626048BE500EA0ED7 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A58526048BE500EA0ED7 /* ProfileController.swift */; };
 		A4A8A58A2604952000EA0ED7 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A5892604952000EA0ED7 /* FeedCell.swift */; };
 		A4A8A591260495CB00EA0ED7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A590260495CB00EA0ED7 /* Extensions.swift */; };
+		A4B75F832605E2A900936F9D /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B75F822605E2A900936F9D /* ProfileCell.swift */; };
+		A4B75F862605E2B700936F9D /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B75F852605E2B700936F9D /* ProfileHeader.swift */; };
 		A4B8E9372604C5E100CE57BE /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B8E9362604C5E100CE57BE /* LoginController.swift */; };
 		A4B8E93B2604C5F400CE57BE /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B8E93A2604C5F400CE57BE /* RegistrationController.swift */; };
 		A4B8E93E2604CEE400CE57BE /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B8E93D2604CEE400CE57BE /* CustomTextField.swift */; };
@@ -54,6 +56,8 @@
 		A4A8A58526048BE500EA0ED7 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		A4A8A5892604952000EA0ED7 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		A4A8A590260495CB00EA0ED7 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A4B75F822605E2A900936F9D /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		A4B75F852605E2B700936F9D /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		A4B8E9362604C5E100CE57BE /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A4B8E93A2604C5F400CE57BE /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		A4B8E93D2604CEE400CE57BE /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -137,10 +141,20 @@
 		A4A8A56F260489A900EA0ED7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A4B75F882605E2BF00936F9D /* Profile */,
 				A4A8A5892604952000EA0ED7 /* FeedCell.swift */,
 				A4B8E93D2604CEE400CE57BE /* CustomTextField.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A4B75F882605E2BF00936F9D /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A4B75F822605E2A900936F9D /* ProfileCell.swift */,
+				A4B75F852605E2B700936F9D /* ProfileHeader.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		A4B8E9312604C3E300CE57BE /* ViewModel */ = {
@@ -321,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4B8E93E2604CEE400CE57BE /* CustomTextField.swift in Sources */,
+				A4B75F862605E2B700936F9D /* ProfileHeader.swift in Sources */,
 				A4A8A5572604884100EA0ED7 /* ViewController.swift in Sources */,
 				A4B8E9372604C5E100CE57BE /* LoginController.swift in Sources */,
 				A4A8A58A2604952000EA0ED7 /* FeedCell.swift in Sources */,
@@ -335,6 +350,7 @@
 				A4A8A591260495CB00EA0ED7 /* Extensions.swift in Sources */,
 				A48794432605CDDA00110959 /* ImageUploader.swift in Sources */,
 				A48794462605CDE700110959 /* AuthService.swift in Sources */,
+				A4B75F832605E2A900936F9D /* ProfileCell.swift in Sources */,
 				A4A8A5552604884100EA0ED7 /* SceneDelegate.swift in Sources */,
 				A4B8E93B2604C5F400CE57BE /* RegistrationController.swift in Sources */,
 			);
