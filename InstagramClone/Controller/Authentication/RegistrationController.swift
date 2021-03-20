@@ -13,6 +13,7 @@ class RegistrationController: UIViewController {
     // MARK: - Properties
     
     private var viewModel = RegistrationViewModel()
+    private var profileImage: UIImage?
     
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -40,6 +41,7 @@ class RegistrationController: UIViewController {
     private let signUpButton: UIButton = {
         let button = UIButton(type: .system)
         button.authenticationButton(title: "Sign Up")
+        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -63,6 +65,24 @@ class RegistrationController: UIViewController {
     }
     
     // MARK: - Action
+    
+    @objc func handleSignUp() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let fullname = fullNameTextField.text else { return }
+        guard let username = usernameTextField.text else { return }
+        guard let profileImage = profileImage else { return }
+        
+        let credentials = AuthCredentials(
+            email: email,
+            password: password,
+            fullname: fullname,
+            username: username,
+            profileImage: profileImage
+        )
+        
+        AuthService.shared.registerUser(with: credentials)
+    }
     
     @objc func handleShowLogin() {
         navigationController?.popViewController(animated: true)
@@ -154,22 +174,26 @@ class RegistrationController: UIViewController {
     }
     
     func showImagePicker() {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.allowsEditing = true
-        self.present(picker, animated: true)
+        DispatchQueue.main.async {
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            picker.allowsEditing = true
+            self.present(picker, animated: true)
+        }
     }
     
     func showImagePickerPermissionAlert() {
-        let alert = UIAlertController(
-            title: "Permission error!",
-            message: "Photo library permission is required.",
-            preferredStyle: .alert
-        )
-        
-        self.present(alert, animated: true) {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                alert.dismiss(animated: true)
+        DispatchQueue.main.async {
+            let alert = UIAlertController(
+                title: "Permission error!",
+                message: "Photo library permission is required.",
+                preferredStyle: .alert
+            )
+            
+            self.present(alert, animated: true) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                    alert.dismiss(animated: true)
+                }
             }
         }
     }
@@ -199,6 +223,7 @@ extension RegistrationController: UIImagePickerControllerDelegate, UINavigationC
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         guard let selectedImage = info[.editedImage] as? UIImage else { return }
+        profileImage = selectedImage
         
         plusPhotoButton.layer.cornerRadius = plusPhotoButton.frame.width / 2
         plusPhotoButton.layer.masksToBounds = true
