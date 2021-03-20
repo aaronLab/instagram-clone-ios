@@ -18,6 +18,7 @@ class RegistrationController: UIViewController {
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "plus_photo"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFill
         button.tintColor = .white
         button.addTarget(self, action: #selector(handleProfilePhotoSelect), for: .touchUpInside)
         return button
@@ -81,7 +82,16 @@ class RegistrationController: UIViewController {
             profileImage: profileImage
         )
         
-        AuthService.shared.registerUser(with: credentials)
+        AuthService.shared.registerUser(with: credentials) { [weak self] error in
+            guard let `self` = self else { return }
+            
+            if let error = error {
+                print("DEBUG: Failed to register user \(error.localizedDescription)")
+                return
+            }
+            
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @objc func handleShowLogin() {
