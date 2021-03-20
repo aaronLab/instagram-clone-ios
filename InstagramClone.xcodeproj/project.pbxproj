@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,7 @@
 		A4B8E93B2604C5F400CE57BE /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B8E93A2604C5F400CE57BE /* RegistrationController.swift */; };
 		A4B8E93E2604CEE400CE57BE /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B8E93D2604CEE400CE57BE /* CustomTextField.swift */; };
 		A4B8E9452605997200CE57BE /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B8E9442605997200CE57BE /* AuthenticationViewModel.swift */; };
+		A4B8E9492605A5E400CE57BE /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A4B8E9482605A5E400CE57BE /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4B8E9492605A5E400CE57BE /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +82,7 @@
 		A4A8A5512604884100EA0ED7 /* InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				A4B8E94B2605A5ED00CE57BE /* Application */,
 				A4B8E9302604C3DC00CE57BE /* Model */,
 				A4B8E9312604C3E300CE57BE /* ViewModel */,
 				A4A8A56F260489A900EA0ED7 /* View */,
@@ -87,13 +90,6 @@
 				A4A8A56D260489A500EA0ED7 /* Controller */,
 				A4B8E9322604C3F700CE57BE /* API */,
 				A4A8A5672604899300EA0ED7 /* Utils */,
-				A4A8A5522604884100EA0ED7 /* AppDelegate.swift */,
-				A4A8A5542604884100EA0ED7 /* SceneDelegate.swift */,
-				A4A8A5562604884100EA0ED7 /* ViewController.swift */,
-				A4A8A5582604884100EA0ED7 /* Main.storyboard */,
-				A4A8A55B2604884200EA0ED7 /* Assets.xcassets */,
-				A4A8A55D2604884200EA0ED7 /* LaunchScreen.storyboard */,
-				A4A8A5602604884200EA0ED7 /* Info.plist */,
 			);
 			path = InstagramClone;
 			sourceTree = "<group>";
@@ -168,6 +164,20 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		A4B8E94B2605A5ED00CE57BE /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A4A8A5522604884100EA0ED7 /* AppDelegate.swift */,
+				A4A8A5542604884100EA0ED7 /* SceneDelegate.swift */,
+				A4A8A5562604884100EA0ED7 /* ViewController.swift */,
+				A4A8A5582604884100EA0ED7 /* Main.storyboard */,
+				A4A8A55B2604884200EA0ED7 /* Assets.xcassets */,
+				A4A8A55D2604884200EA0ED7 /* LaunchScreen.storyboard */,
+				A4A8A5602604884200EA0ED7 /* Info.plist */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -184,6 +194,9 @@
 			dependencies = (
 			);
 			name = InstagramClone;
+			packageProductDependencies = (
+				A4B8E9482605A5E400CE57BE /* IQKeyboardManagerSwift */,
+			);
 			productName = InstagramClone;
 			productReference = A4A8A54F2604884100EA0ED7 /* InstagramClone.app */;
 			productType = "com.apple.product-type.application";
@@ -211,6 +224,9 @@
 				Base,
 			);
 			mainGroup = A4A8A5462604884100EA0ED7;
+			packageReferences = (
+				A4B8E9472605A5E400CE57BE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = A4A8A5502604884100EA0ED7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -456,6 +472,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A4B8E9472605A5E400CE57BE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A4B8E9482605A5E400CE57BE /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A4B8E9472605A5E400CE57BE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A4A8A5472604884100EA0ED7 /* Project object */;
 }

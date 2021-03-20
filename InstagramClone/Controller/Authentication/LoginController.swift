@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class LoginController: UIViewController {
     
@@ -73,18 +74,11 @@ class LoginController: UIViewController {
     @objc func textDidChange(sender: UITextField) {
         if sender == emailTextField {
             viewModel.email = sender.text
-        }
-        if sender == passwordTextField {
+        } else {
             viewModel.password = sender.text
         }
         
-        loginButton.isEnabled = viewModel.formIsValid
-        
-        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.2, delay: 0) { [weak self] in
-            guard let `self` = self else { return }
-            self.loginButton.backgroundColor = self.viewModel.buttonBackgroundColor
-            self.loginButton.setTitleColor(self.viewModel.buttonTitleColor, for: .normal)
-        }
+        updateForm()
     }
     
     // MARK: - Helpers
@@ -131,6 +125,22 @@ class LoginController: UIViewController {
     func configureNotificationObservers() {
         emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+    
+}
+
+// MARK: - FormViewModel
+
+extension LoginController: FormViewModel {
+    
+    func updateForm() {
+        loginButton.isEnabled = viewModel.formIsValid
+        
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.2, delay: 0) { [weak self] in
+            guard let `self` = self else { return }
+            self.loginButton.backgroundColor = self.viewModel.buttonBackgroundColor
+            self.loginButton.setTitleColor(self.viewModel.buttonTitleColor, for: .normal)
+        }
     }
     
 }
