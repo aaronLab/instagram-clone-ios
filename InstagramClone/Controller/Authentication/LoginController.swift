@@ -11,6 +11,8 @@ class LoginController: UIViewController {
     
     // MARK: - Properties
     
+    private var viewModel = LoginViewModel()
+    
     private let iconImage: UIImageView = {
         let iv = UIImageView(image: #imageLiteral(resourceName: "Instagram_logo_white"))
         iv.contentMode = .scaleAspectFill
@@ -23,7 +25,7 @@ class LoginController: UIViewController {
     }()
     
     private let passwordTextField: UITextField = {
-        let tf = CustomtextField(placeholder: "Password")
+        let tf = CustomtextField(placeholder: "Password", keyboardType: .default)
         tf.isSecureTextEntry = true
         return tf
     }()
@@ -58,12 +60,31 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        configureNotificationObservers()
     }
     
     // MARK: - Actions
+    
     @objc func handleShowSignUp() {
         let controller = RegistrationController()
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func textDidChange(sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        }
+        if sender == passwordTextField {
+            viewModel.password = sender.text
+        }
+        
+        loginButton.isEnabled = viewModel.formIsValid
+        
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.2, delay: 0) { [weak self] in
+            guard let `self` = self else { return }
+            self.loginButton.backgroundColor = self.viewModel.buttonBackgroundColor
+            self.loginButton.setTitleColor(self.viewModel.buttonTitleColor, for: .normal)
+        }
     }
     
     // MARK: - Helpers
@@ -105,6 +126,11 @@ class LoginController: UIViewController {
         view.addSubview(dontHaveAccountButton)
         dontHaveAccountButton.centerX(inView: view)
         dontHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
+    }
+    
+    func configureNotificationObservers() {
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
     
 }

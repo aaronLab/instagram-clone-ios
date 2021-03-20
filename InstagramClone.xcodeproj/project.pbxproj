@@ -24,6 +24,7 @@
 		A4B8E9372604C5E100CE57BE /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B8E9362604C5E100CE57BE /* LoginController.swift */; };
 		A4B8E93B2604C5F400CE57BE /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B8E93A2604C5F400CE57BE /* RegistrationController.swift */; };
 		A4B8E93E2604CEE400CE57BE /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B8E93D2604CEE400CE57BE /* CustomTextField.swift */; };
+		A4B8E9452605997200CE57BE /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B8E9442605997200CE57BE /* AuthenticationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		A4B8E9362604C5E100CE57BE /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A4B8E93A2604C5F400CE57BE /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		A4B8E93D2604CEE400CE57BE /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		A4B8E9442605997200CE57BE /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		A4A8A56E260489A700EA0ED7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A4B8E9442605997200CE57BE /* AuthenticationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				A4A8A58A2604952000EA0ED7 /* FeedCell.swift in Sources */,
 				A4A8A58026048BD900EA0ED7 /* ImageSelectorController.swift in Sources */,
 				A4A8A58326048BDF00EA0ED7 /* NotificationsController.swift in Sources */,
+				A4B8E9452605997200CE57BE /* AuthenticationViewModel.swift in Sources */,
 				A4A8A57D26048BD300EA0ED7 /* SearchController.swift in Sources */,
 				A4A8A5532604884100EA0ED7 /* AppDelegate.swift in Sources */,
 				A4A8A58626048BE500EA0ED7 /* ProfileController.swift in Sources */,
